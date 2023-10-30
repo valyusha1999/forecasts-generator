@@ -7,7 +7,7 @@
 const button = document.querySelector('.forecast-btn');
 const newPrediction = document.querySelector('h1');
 const newPercent = document.querySelector('.current-forecast p');
-const div = document.querySelector('#forecast-item');
+const div = document.querySelector('.forecasts');
 
 
 
@@ -16,16 +16,23 @@ const div = document.querySelector('#forecast-item');
 button.addEventListener('click', function newText() {
     newPrediction.textContent = getRandomPrediction(predictions);
     newPercent.textContent = "Вероятность: " + randomNumber(0, 100) + "%";
+    container();
+
 });
 
+function container() {
+    const pastText = document.createElement('div')
+    pastText.classList.add('forecast-item')
+    const pastPrediction = document.createElement('h3');
+    const pastPercent = document.createElement('p');
+    pastPrediction.textContent = newPrediction.textContent;
+    pastPercent.textContent = newPercent.textContent;
+    pastText.prepend(pastPrediction);
+    pastPrediction.after(pastPercent);
+    div.prepend(pastText);
+}
 
-/*const pastText = document.createElement('div').classList.add('forecast-item');
-const pastPrediction = document.createElement('h3');
-const pastPercent = document.createElement('p');
-div.prepend(pastText);
-pastText.prepend(pastPrediction);
-pastPrediction.after(pastPercent);
-*/
+
 
 let predictions = [
     "Готовьтесь к романтическим приключениям.",
