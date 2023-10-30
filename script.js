@@ -19,23 +19,13 @@ button.addEventListener('click', function newText() {
 });
 
 
-const pastText = document.createElement('div').classList.add('forecast-item');
+/*const pastText = document.createElement('div').classList.add('forecast-item');
 const pastPrediction = document.createElement('h3');
 const pastPercent = document.createElement('p');
 div.prepend(pastText);
 pastText.prepend(pastPrediction);
 pastPrediction.after(pastPercent);
-
-/*button.addEventListener('click', function pText() {
-    const pastText = document.createElement('div').classList.add('forecast-item');
-    const pastPrediction = document.createElement('h3');
-    const pastPercent = document.createElement('p');
-
-    pastPrediction = '';
-    
-
-    pastPrediction.textContent = newPrediction * /
-});*/
+*/
 
 let predictions = [
     "Готовьтесь к романтическим приключениям.",
